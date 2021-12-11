@@ -77,6 +77,6 @@ There are even more options that you try and experiment.  Here is the list:
 | `universal:packageOsxDmg`     | Generates a DMG file with the same contents as the universal zip/tgz |
 | `windows:packageBin`          | Generates an MSI                                                     |
 
-Check out [sbt-native-packager](1) for more information if you are interested.
+Check out [sbt-native-packager][1] for more information if you are interested.
 
 [1]: <https://www.scala-sbt.org/sbt-native-packager/index.html>
