@@ -1,4 +1,4 @@
-organization := "com.shinkou"
+organization := "com.github.shinkou"
 name := "r1c1"
 maintainer:= "chun-kwong.wong@gmail.com"
 version := "0.1.0"

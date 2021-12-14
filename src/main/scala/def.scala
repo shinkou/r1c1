@@ -84,7 +84,7 @@ class Querier(val fname :String) {
 								logger.info(s"sshKey -> $sshKey")
 								Option(props.getProperty(dbAlias + ".sshKeyPassphrase").asInstanceOf[String]) match {
 									case Some(sshKeyPassphrase) => jsch.addIdentity(sshKey, sshKeyPassphrase)
-									case _ => jsch.addIdentity(sshKey)
+									case None => jsch.addIdentity(sshKey)
 								}
 							}
 							case None =>
@@ -105,7 +105,7 @@ class Querier(val fname :String) {
 										logger.info("sshPassword -> <REDACTED>")
 										session.setPassword(sshPassword)
 									}
-									case _ =>
+									case None =>
 								}
 								Option(props.getProperty(dbAlias + ".sshStrictHostKeyChecking").asInstanceOf[String]) match {
 									case Some(sshStrictHostKeyChecking) => {
@@ -114,7 +114,7 @@ class Querier(val fname :String) {
 										sshConfig.put("StrictHostKeyChecking", sshStrictHostKeyChecking)
 										session.setConfig(sshConfig)
 									}
-									case _ =>
+									case None =>
 								}
 								session.connect()
 								session.setPortForwardingL(sSshPortFwd)
