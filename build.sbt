@@ -20,5 +20,6 @@ libraryDependencies ++= Seq(
 		exclude("log4j", "log4j")
 		exclude("org.slf4j", "slf4j-log4j12")
 	, "com.amazon.redshift" % "redshift-jdbc42" % "2.1.0.3"
+	, "com.jcraft" % "jsch" % "0.1.55"
 )
 enablePlugins(JavaAppPackaging)
